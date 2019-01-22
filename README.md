@@ -20,6 +20,6 @@
 ## Run notebooks
 - open a terminal and cd into this cloned repo and run jupyter notebook
 ```
-    cd <cs2notebooks folder>
+    cd <stlnotebooks folder>
     jupyter notebook
 ```
