@@ -1,4 +1,5 @@
-# STL - notebooks
+# STL Notebooks
+
 # C++ STL and Algorithm Libraries on Jupyter Notebooks
 
 ## Requirements
