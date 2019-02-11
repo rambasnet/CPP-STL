@@ -5,6 +5,7 @@
 #include <functional>
 #include <vector>
 #include <utility>
+#include <cstring>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ ostream& operator<<(ostream& out, priority_queue<T>& q) {
 }
 
 void demo1() {
-// example priority_queue storing pairs (two values)
+    // example priority_queue storing pairs (two values)
     // create alias for better readability
     using my_pair_t = pair<size_t, bool>;
     using my_container_t = vector<my_pair_t>;
@@ -43,6 +44,7 @@ void demo1() {
     my_pQueue.push(std::make_pair(3, false));
     my_pQueue.push(std::make_pair(7, true));
     cout << boolalpha;
+    cout << "Demo 1" << endl;
     while(!my_pQueue.empty()) 
     {
         const auto& p = my_pQueue.top();
@@ -52,7 +54,7 @@ void demo1() {
 }
 
 void demo2() {
-// example priority_queue storing pairs (two values)
+    // example priority_queue storing pairs (two values)
     // create alias for better readability
     using my_pair_t = pair<size_t, string>;
     using my_container_t = vector<my_pair_t>;
@@ -69,10 +71,11 @@ void demo2() {
                     my_container_t,
                     decltype(my_comp) > my_pQueue(my_comp);
 
-    my_pQueue.push(std::make_pair(5, "Ball"));
-    my_pQueue.push(std::make_pair(3, "Zebra"));
-    my_pQueue.push(std::make_pair(7, "Apple"));
+    my_pQueue.push(std::make_pair(50, "Ball"));
+    my_pQueue.push(std::make_pair(100, "Zebra"));
+    my_pQueue.push(std::make_pair(70, "Apple"));
     cout << boolalpha;
+    cout << "Demo 2" << endl;
     while(!my_pQueue.empty()) 
     {
         const auto& p = my_pQueue.top();
@@ -83,9 +86,11 @@ void demo2() {
 
 
 
-int main() {
-    //demo1();
-    demo2();
+int main(int argc, char* argv[]) {
+    if (argc == 2 && strncmp(argv[1], "1", 1) == 0)
+        demo1();
+    else
+        demo2();
     return 0;
 }
 
